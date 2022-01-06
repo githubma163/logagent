@@ -1,5 +1,5 @@
 1.创建索引 PUT
-http://10.128.247.199:9200/log
+http://127.0.1:9200/log
 {
 	"settings": {
 		"number_of_shards": 3,
