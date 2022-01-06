@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Premain-Class: com.max.log.agent.javassist.LogAgent
+Can-Redefine-Classes: true

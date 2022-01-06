@@ -1,0 +1,3 @@
+使用docker-compose方式部署es+kibana，内容参考docker-compose.yml
+启动命令docker-compose up -d
+

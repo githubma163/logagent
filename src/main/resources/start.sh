@@ -1,0 +1,1 @@
+java -javaagent:/Users/max/Documents/docker/logagent.jar=app=log,include=com.max.log.test.controller,exclude=,send=es,url=http://127.0.0.1:9200,async=false,batch=10 -jar /Users/max/Documents/docker/log-test-1.0-SNAPSHOT.jar

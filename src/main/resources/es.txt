@@ -1,0 +1,67 @@
+1.创建索引 PUT
+http://10.128.247.199:9200/log
+{
+	"settings": {
+		"number_of_shards": 3,
+		"number_of_replicas": 1
+	},
+	"mappings": {
+		"log": {
+			"properties": {
+				"traceId": {
+					"type": "keyword"
+				},
+				"clazz": {
+					"type": "text"
+				},
+				"method": {
+					"type": "text"
+				},
+				"param": {
+					"type": "keyword"
+				},
+				"time": {
+					"type": "integer"
+				},
+				"line": {
+					"type": "integer"
+				},
+				"timestmap": {
+					"type": "date",
+					"format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis"
+				}
+			}
+		}
+	}
+}
+
+2.保存数据 post json
+http://127.0.1:9200/log/log
+{
+	"traceId": "063587cb-2453-420d-95ff-080e00fde501",
+	"clazz": "com.max.service.TestService",
+	"method": "test",
+	"param": "[510708913664100, test]",
+	"time": 40,
+	"timestmap": "2020-12-16 15:19:59"
+}
+
+3.批量保存 post json
+
+4.查询
+GET http://127.0.1:9200/log/log/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+5.删除全部数据
+POST http://127.0.1:9200/log/log/_delete_by_query
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
