@@ -9,3 +9,11 @@
 * 为了防止日志采集对应用的影响，采用了批量保存日志和异步保存设计
 
 3. 具体使用
+* 下载代码，使用mvn clean package命令打包，得到logagent.jar
+* 安装elk，这里使用elk 6.x版本，并且使用docker-compose来构建，docker-compose文件在文件的resources目录下，启动命令是docker-compose up -d
+* 编写个空的springboot项目，添加一个controller，保证能够正常访问，这里假设springboot程序是log-test-1.0-SNAPSHOT.jar
+* 启动程序，命令如下，注意include，url字段需要换成实际值
+```
+java -javaagent:/Users/max/Documents/docker/logagent.jar=app=log,include=com.max.log.test.controller,exclude=,send=es,url=http://127.0.0.1:9200,async=false,batch=10 -jar /Users/max/Documents/docker/log-test-1.0-SNAPSHOT.jar
+```
+* 访问controller接口，需要超过10次，上面的batch变量是10，然后去kibana中查看
