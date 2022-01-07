@@ -28,6 +28,7 @@ java -javaagent:/Users/max/Documents/docker/logagent.jar=app=log,include=com.max
 5.java字节码操作工具
 * asm
 * cglib
+* apache commons-bcel
 * aspectj
 * bytebuddy
 * javassist
