@@ -17,3 +17,10 @@
 java -javaagent:/Users/max/Documents/docker/logagent.jar=app=log,include=com.max.log.test.controller,exclude=,send=es,url=http://127.0.0.1:9200,async=false,batch=10 -jar /Users/max/Documents/docker/log-test-1.0-SNAPSHOT.jar
 ```
 * 访问controller接口，需要超过10次，上面的batch变量是10，然后去kibana中查看
+
+4.java agent使用场景
+* btrace https://www.jianshu.com/p/1b52561e3848
+* athars https://arthas.aliyun.com/doc/
+* greys https://github.com/oldmanpushcart/greys-anatomy
+* es apm https://www.elastic.co/cn/blog/monitoring-applications-with-elasticsearch-and-elastic-apm
+* apache skywalking https://skywalking.apache.org/
