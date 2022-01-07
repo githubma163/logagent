@@ -24,3 +24,10 @@ java -javaagent:/Users/max/Documents/docker/logagent.jar=app=log,include=com.max
 * greys https://github.com/oldmanpushcart/greys-anatomy
 * es apm https://www.elastic.co/cn/blog/monitoring-applications-with-elasticsearch-and-elastic-apm
 * apache skywalking https://skywalking.apache.org/
+
+5.java字节码操作工具
+* asm
+* cglib
+* aspectj
+* bytebuddy
+* javassist
